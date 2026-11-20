@@ -52,19 +52,17 @@ new location.
 
 | Launcher | AI decisions | Steering/pedal updates | Settings file |
 |---|---:|---:|---|
-| **`Launch ORAC.bat`** (recommended) | 60 per second | 180 per second | `C:\orac\orac_60_180.ini` |
+| **`Launch ORAC.bat`** (default) | 60 per second | 60 per second | `C:\orac\orac_60_60.ini` |
+| `ORAC 60-180.bat` | 60 per second | 180 per second | `C:\orac\orac_60_180.ini` |
 | `ORAC 45-180.bat` | 45 per second | 180 per second | `C:\orac\orac_45_180.ini` |
 | `ORAC 30-90.bat` | 30 per second | 90 per second | `C:\orac\orac_30_90.ini` |
 
-`ORAC 60-180.bat` starts the same mode as the default launcher.
+`ORAC 60-60.bat` starts the same mode as the default launcher. `Launch ORAC (ORAC drives your car).bat` also lets
+ORAC drive your own car.
 
-These numbers are the AI's **cadence**: how often it makes a plan and how often it updates the
-car's controls. A higher control rate allows smoother steering and pedal inputs. The alternative
-modes offer a different feel and update load. Start with **60/180**; it is the recommended release
-configuration. The alternatives are available if you want to experiment, but their tuning may
-differ.
-
-Each mode has its own settings file. An F9 change made in one mode does not change the others.
+These numbers are the AI's **cadence**: how often it makes a plan and how often it updates the car's controls. Start
+with the default **60/60**. The other modes have their own tuned settings and a slightly different feel; try them if
+you like. Each mode has its own settings file, so an F9 change made in one mode does not change the others.
 
 ## Your first race
 
@@ -87,6 +85,17 @@ and damage, chooses tyres for the conditions, and takes the car through the pit 
   inspect the action.
 
 You do not need to open either overlay for ORAC to work.
+
+## Help improve ORAC
+
+- **Share your data:** run **`Share ORAC data.bat`** (in this folder). Start a share on
+  [openracingai.com](https://openracingai.com) (Community → Share learners), paste the command it gives you into the
+  window, then pick the files on the website. It sends only ORAC's learned car data and, if you agree, your best AI
+  laps for the leaderboard — never your logs. Everyone's data is combined into better figures for all players.
+- **Share racing lines** you record, and **tweaks** you like, on the same website.
+- **Mod cars:** ORAC needs a car's performance envelopes to drive it well. Generate them with
+  `orac\orac_generate_ai.bat` and `orac\orac_generate_player.bat` (see `orac\README.txt`), then share them from the
+  car's page on the website — or download envelopes other players already shared there.
 
 ## Uninstall
 
@@ -118,6 +127,8 @@ starts normally. Reinstall only on the supported game version.
 using `Reset ORAC settings.bat`.
 
 ## Known limitations
+
+See `KNOWN ISSUES.md` for the full, current list.
 
 - This is a release candidate, not the final release.
 - Some cars can still spin occasionally while entering the pits at some tracks. This is being

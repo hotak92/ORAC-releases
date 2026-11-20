@@ -80,6 +80,24 @@ return Strength to **0.5** or temporarily set it to **0** to compare.
 The supplied modes already have matching cadence and filter settings. Prefer the launchers over
 copying one mode's ini onto another.
 
+### LMDh hybrid composition
+
+Under **Output → LMDh hybrid (E1)**, next to the hybrid on/off switch and the deploy stage, the
+**Composition** row selects which lines the spawn-time hybrid composition writes into the game's
+LMDh vehicle description. It applies at the next vehicle spawn, like the on/off switch — changing it
+does not rebuild cars already on track. Leave it at **kEcu** unless you are testing the alternates:
+
+- **kEcu** — the default: the game's own MGU hardware plus ORAC's ECU controller file.
+- **kMguController** — the LMP1 pattern: the controller lives in the hybrid slot the game's own AI
+  hybrids use, with no ECU. An experimental alternate for the case the ECU slot does not load.
+- **kMguOnly / kEcuOnly** — one-line diagnostic compositions used by the November hybrid probe.
+  They exist to test which inserted line the game accepts; do not race with them.
+
+The composition only matters while the hybrid switch is on, and ORAC commands only the deploy stage
+— the controller file maps the stage to motor power, regen and battery use. If a spawned hybrid car
+does not answer the deploy-stage check, ORAC logs an error per car, reverts the description to
+retail for every next spawn and stops claiming the hybrid is active.
+
 ## Restore a setting or the package defaults
 
 ### Remove one manual override

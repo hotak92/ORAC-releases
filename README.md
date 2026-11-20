@@ -24,8 +24,11 @@ and the racing lines you record. Every player's data makes the AI better for eve
 
 - Release candidate: expect rough edges.
 - Some cars can still spin now and then when entering the pits on some tracks.
-- Tuned for the cars that come with the game; mod tracks and mod cars are not supported yet.
-- LMDh hybrid deployment is off in this release.
+- Mod tracks are not supported yet. Mod cars need their performance envelopes: generate them with the bundled tools
+  or download ones other players shared on openracingai.com.
+- Hybrid deployment (LMDh, LMH, LMP1) is off in this release.
 - Offline single-player only. Do not use ORAC in multiplayer.
+
+The full list is in [docs/KNOWN ISSUES.md](docs/KNOWN%20ISSUES.md).
 
 This repository holds the release packages and their documents only.

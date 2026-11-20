@@ -1,51 +1,33 @@
-# What’s new in the ORAC release candidate
+# What's new in this ORAC release candidate
 
-This release candidate updates the previous tester package with working end-to-end pit stops,
-smoother control, selectable update rates and revised class balance.
+## Braking
+- Cars learn how hard they can really brake (from the torque at the wheel hubs), separately from how much grip the
+  tyres have, and plan their braking from it.
+- Braking is planned with a short build-up, as a real driver squeezes the pedal, and every brake zone starts on time.
+- Lock-ups and rear slides under braking are caught earlier and more gently, so cars keep turning into the corner and
+  spin far less — while the brakes are never cut away completely.
+- Result in our Monza tests: about a second a lap quicker for the prototypes, half a second for GT3, with fewer
+  contacts and spins.
 
-## Autonomous pit stops
+## Race start and pit stops
+- Each AI car starts on the tyre and the fuel ORAC chose for the race (the conditions, the race length and the car's
+  own consumption).
+- The pit strategy plans the whole race: fuel, tyre wear, damage and the right tyres for the conditions, and stops
+  only when the stop pays off.
+- Cars know their own pit box from the start, plan their braking into the pit lane early, respect the pit limiter
+  and stop at the box.
+- Full grids work at tracks with fewer pit boxes or grid slots than cars: the extra cars share a pit box, and the
+  extra grid slots are added at the back of the grid (before, the game could crash while loading).
 
-ORAC now manages the complete pit-stop cycle for AI cars:
+## Four update-rate modes
+- **60/60** — the default, launched by `Launch ORAC.bat`.
+- **60/180**, **45/180** and **30/90** — each with its own launcher and its own settings file in `C:\orac`, tuned for
+  that mode. F9 changes are saved to the mode you are using.
 
-- decides when to stop using the fuel window, tyre wear and damage;
-- chooses an appropriate tyre compound for the conditions;
-- brings the car into the pit lane, stops at its box for service and drives back out; and
-- accounts for the car's real fuel capacity when planning refuelling.
+## Share and help
+- **`Share ORAC data.bat`** sends ORAC's learned car data (and, if you agree, your best AI laps for the leaderboard)
+  to openracingai.com, where everyone's data is combined into better figures for all players.
+- On the website you can browse, download and rate shared racing lines and tweaks, filter by class and car, and share
+  or download performance envelopes for mod cars. Accounts use your e-mail and a password.
 
-Fuel-stop timing is spread across the useful strategy window rather than sending the whole field
-to the pits at the first opportunity.
-
-## Smoother steering
-
-The recommended **60/180** mode makes 60 planning decisions per second and updates steering and
-pedals 180 times per second. The higher control rate gives finer, smoother inputs.
-
-A steering filter also reduces the repeating wobble associated with the planning update rate. It
-is set to half strength in the supplied configuration, and each cadence mode has a filter setting
-matched to that mode.
-
-Steering through the pit lane now follows a smooth path for the whole visit, including entry and
-exit.
-
-## Three cadence modes
-
-- **60/180** — the recommended default, launched by `Launch ORAC.bat`.
-- **45/180** — fewer planning updates with the same control update rate.
-- **30/90** — lower planning and control update rates.
-
-Each mode loads its own ini file in `C:\orac`. F9 changes are saved to the mode currently in use,
-so you can experiment with one mode without changing the others.
-
-## Revised balance between classes
-
-Tyre difficulty now has updated defaults for individual vehicle classes. This gives different
-types of car a more appropriate balance instead of applying one tyre value to the whole roster.
-The controls remain available under **F9 → Tweaks → Pace & difficulty**.
-
-## Still worth knowing
-
-An occasional pit-entry spin remains possible with some car and track combinations. The release
-is tuned primarily for the game's shipped roster. LMDh hybrid deployment is not enabled, and
-mod-track support is not included in this release.
-
-See `README.md` for installation and known limitations, and `TUNING.md` for the settings guide.
+See `KNOWN ISSUES.md` for what is still being worked on.
