@@ -2,7 +2,7 @@
 
 **Release candidate**
 
-ORAC is an independently developed, clean-room racing AI for Project Motor Racing. It takes over
+ORAC is a racing AI for Project Motor Racing. It takes over
 the AI-controlled cars in offline single-player sessions, planning their speed and steering while
 continuously correcting the steering, throttle and brake. It also manages pit stops, including
 fuel, tyres, repairs and tyre choice for the conditions.

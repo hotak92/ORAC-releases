@@ -1,6 +1,6 @@
 # ORAC for Project Motor Racing — downloads
 
-ORAC is a free, clean-room AI mod for Project Motor Racing. It replaces the AI in offline single-player sessions:
+ORAC is a free AI mod for Project Motor Racing. It replaces the AI in offline single-player sessions:
 you drive your own car as usual, and ORAC drives every AI car — its speed plan, steering, braking, traffic and
 full race strategy (fuel, tyres, repairs, pit stops).
 
