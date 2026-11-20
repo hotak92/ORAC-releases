@@ -1,0 +1,15 @@
+ORAC for Project Motor Racing — release candidate
+
+ORAC is an independently developed, clean-room racing AI: no Project Motor Racing code,
+data or file structure was copied into it. Project Motor Racing and its content remain
+the property of their owners. ORAC changes the game in memory for one run; the installer's
+file replacements are backed up and restored by Uninstall.bat.
+
+Offline single-player only. Do not use ORAC in multiplayer.
+
+Credits:
+  Austin Ogonoski — tester
+  Martino Cesaratto — developer
+
+This is a release candidate. See README.md for installation and use, WHATS-NEW.md for what
+changed, and TUNING.md for the settings guide.
